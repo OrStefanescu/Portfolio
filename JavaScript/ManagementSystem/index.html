@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="ManagementSystem.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Employee Management System</h1>
+    <input type="text" id="employename">
+    <button onclick="searchemployee()"></button>
+    <label> Select Worker
+        <select id="employeeselect">
+            <option value="1">1</option>
+        </select>
+    </label>
+
+    <div>
+        <h2>Employee Information</h2>
+        <table id="MainDetails">
+            <tr>
+                <th>Fullname</th>
+                <th>Role</th>
+                <th>Experience</th>
+                <th>Salary</th>
+                <th>Monthly Goal</th>
+                <th>Free Days</th>
+            </tr>
+            <tr>
+                <td id="name">Randon Name</td>
+                <td id="role">Singer</td>
+                <td id="experience">3</td>
+                <th id="salary">50</th>
+                <th id="monthlygoal">100</th>
+                <th id="freedays">14</th>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

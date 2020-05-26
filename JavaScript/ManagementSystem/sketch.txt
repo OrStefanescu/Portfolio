@@ -1,0 +1,56 @@
+var worker = {
+    name: "",
+    family: "",
+    age: "",
+    role: "",
+    seniority: 1,
+    hp: 1,
+    mhg: "",
+    taskl: [{ tname: "task", tsub: [{ name: "suntask", urg: "lowurg", tpt: "1", state: "done" }], prog: "100" }],
+    hd: "",
+    fd: "",
+};
+
+
+function updatetask(params, val) {
+    var a = worker.taskl.indexOf(x => x.tname === params);
+    if (a !== -1) {
+        worker.taskl.push(val);
+    } else {
+        var b = Object.keys(worker.params[a].tsub).indexOf(x => x === val.name);
+        if (b !== -1) {
+            worker.params[a].tsub[b] = val
+        } else {
+            worker.params[a].tsub.push(val);
+        }
+    }
+}
+
+var jobdes = { jn: "singer", si: 1, bhp: 50 };
+
+function workerupdate(paramname, paramval, secondaryparamval) {
+    //rolechange
+    if (paramname == "role") {
+        worker.paramname = paramval;
+        worker.hp = jobdes.si * worker.seniority * jobdes.bhp;
+    }
+    //task change and add
+    else if (paramname == "task") {
+        replaceval(paramval, secondaryparamval);
+    }
+    //regular update
+    else {
+        worker[paramname] = paramval;
+    }
+}
+
+
+workerupdate("name", "joe", 1);
+workerupdate("role", "singer", 1);
+workerupdate("task", "new", {
+    name: "newsubtask ",
+    urg: "lowurg ",
+    tpt: "1 ",
+    state: "notready "
+});
+console.log(worker);
